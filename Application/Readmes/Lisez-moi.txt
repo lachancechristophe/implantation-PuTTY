@@ -1,0 +1,47 @@
+LISEZ-MOI
+============
+
+Ceci est le fichier README de la distribution de l'installateur PuTTY MSI. Si
+vous lisez ceci, vous venez probablement de faire fonctionner notre installateur et
+a installé PuTTY sur votre système.
+
+Que dois-je faire ensuite ?
+----------------------
+
+Si vous souhaitez utiliser PuTTY pour vous connecter à d'autres ordinateurs, ou utiliser PSFTP
+pour transférer des fichiers, vous devez simplement pouvoir les exécuter à partir de la
+Menu de démarrage.
+
+Si vous souhaitez utiliser l'utilitaire de transfert de fichiers en ligne de commande PSCP, vous
+devra le faire à partir d'un Command Prompt ou équivalent, car il
+ne fera rien d'utile sans que les options de la ligne de commande le lui disent
+quels fichiers copier et d'où les copier. Vous pouvez le faire en exécutant simplement
+la commande "pscp" d'une invite de commande, si vous avez utilisé la commande
+option pour mettre le répertoire d'installation de PuTTY sur votre PATH.
+Sinon, vous pouvez toujours exécuter pscp.exe par son nom de chemin complet, par exemple
+"C:\Program Files\PuTTY\pscp.exe".
+
+(Notez qu'une invite de commande qui était déjà ouverte avant que vous n'exécutiez le
+l'installateur n'aura pas hérité de la mise à jour de PATH).
+
+Certaines versions de Windows refusent d'exécuter les fichiers d'aide HTML (.CHM)
+s'ils sont installés sur un lecteur réseau. Si vous avez installé
+PuTTY sur un lecteur réseau, vous pouvez vérifier que le fichier d'aide
+fonctionne correctement. Si ce n'est pas le cas, voir http://support.microsoft.com/kb/896054
+pour obtenir des informations sur la manière de résoudre ce problème.
+
+Que dois-je faire si cela ne fonctionne pas ?
+--------------------------------
+
+Le site web de PuTTY est le suivant
+
+    http://www.chiark.greenend.org.uk/~sgtatham/putty/
+
+Vous trouverez ici notre liste de bogues connus et de fonctionnalités en attente
+demandes. Si votre problème n'y figure pas, ni dans la FAQ, ni
+dans les manuels, lisez la page "Feedback" pour savoir comment signaler
+les insectes pour nous. S'il vous plaît, lisez attentivement la page Feedback : elle est là pour
+vous faire gagner du temps aussi bien qu'à nous. Ne nous envoyez pas de rapports de bugs d'une seule ligne
+en nous disant "ça ne marche pas".
+
+Traduit avec www.DeepL.com/Translator (version gratuite)
