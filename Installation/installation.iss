@@ -15,8 +15,12 @@ AppUpdatesURL=http://www.lachancecsoft.com/
 DefaultDirName={autopf}\LachanceC 1.0 de LachanceCsoft inc.
 DefaultGroupName=LachanceC 1.0
 ; Remove the following line to run in administrative install mode (install for all users.)
+DiskSpanning=yes
+DiskSliceSize=12000000
+SlicesPerDisk=1
+DiskClusterSize=512
 PrivilegesRequired=lowest
-PrivilegesRequiredOverridesAllowed=commandline
+PrivilegesRequiredOverridesAllowed=dialog
 OutputDir=C:\Lachance-C\Installation
 OutputBaseFilename=LachanceCsetup
 SetupIconFile=C:\Lachance-C\Application\PUTTY.ico
@@ -34,10 +38,10 @@ Name: "lisezmoi"; Description: "Fichier Lisez-moi"; Types: full ; Languages: fre
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl" ; LicenseFile: "C:\Lachance-C\Application\Licences\LicenseEN.rtf"
-Name: "french"; MessagesFile: "compiler:Languages\French.isl" ; LicenseFile: "C:\Lachance-C\Application\Licences\LicenseEN.rtf"
+Name: "french"; MessagesFile: "compiler:Languages\French.isl" ; LicenseFile: "C:\Lachance-C\Application\Licences\LicenseFR.rtf"
 
 [Tasks]
-Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: checked
+Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: checkedonce
 
 [Files]
 ; Main application files
@@ -60,25 +64,24 @@ Source: "C:\Lachance-C\Application\Readmes\readme.ico"; DestDir: "{app}/Readme f
 Source: "C:\Lachance-C\Application\Readmes\Lisez-moi.txt"; DestDir: "{app}/Fichier Lisez-moi"; Flags: ignoreversion ; Components: lisezmoi
 Source: "C:\Lachance-C\Application\Readmes\readme.ico"; DestDir: "{app}/Fichier Lisez-moi"; Flags: ignoreversion ; Components: lisezmoi
 ; Archives
-Source: "C:\Lachance-C\Archives\*"; DestDir: "{app}/Archives"; Flags: ignoreversion recursesubdirs ; Components: lachancec
-
-
+Source: "C:\Lachance-C\Archive\*"; DestDir: "{app}/Archives"; Flags: ignoreversion recursesubdirs ; Components: lachancec
 
 [Icons]
 Name: "{group}\LachanceC"; Filename: "{app}\PUTTY.EXE" ; IconFilename: "{app}\PUTTY.ico"
 Name: "{group}\User Guide"; Filename: "{app}/User's guide/User guide.pdf" ; IconFilename: "{app}/User's guide/pdf.ico" ; Languages: english; Components: user
 Name: "{group}\Guide Usager"; Filename: "{app}/Guide de l'usager/Guide usager.pdf" ; IconFilename: "{app}/Guide de l'usager/pdf.ico" ; Languages: french; Components: usager
 Name: "{group}\Readme"; Filename: "{app}/Readme file/Readme.txt" ; IconFilename: "{app}/Readme file/readme.ico" ; Languages: english; Components: readme
-Name: "{group}\Lisez-moi"; Filename: "{app}/Fichier Lisez-moi/Lisez-moi.txt" ; IconFilename: "{app}/Readme file/readme.ico" ; Languages: french; Components: lisezmoi
+Name: "{group}\Lisez-moi"; Filename: "{app}/Fichier Lisez-moi/Lisez-moi.txt" ; IconFilename: "{app}/Fichier Lisez-moi/readme.ico" ; Languages: french; Components: lisezmoi
 Name: "{group}\{cm:ProgramOnTheWeb,LachanceC}"; Filename: "http://www.lachancecsoft.com/" ; IconFilename: "C:\Lachance-C\Installation\www.ico"
 Name: "{group}\{cm:UninstallProgram,LachanceC}"; Filename: "{uninstallexe}" ; IconFilename: "C:\Lachance-C\Installation\uninstall.ico"
 Name: "{autodesktop}\LachanceC"; Filename: "{app}\PUTTY.EXE"; Tasks: desktopicon ; IconFilename: "{app}\PUTTY.ico"
-Name: "{group}\TP1"; Filename: "{app}/Archives/TP1/" ; IconFilename: "{app}/Archives/dossier.ico" 
+Name: "{group}\TP1"; Filename: "{app}/Archives/TP1" ; IconFilename: "{app}/Archives/dossier.ico" 
+Name: "{group}\TP2"; Filename: "{app}/Archives/TP2" ; IconFilename: "{app}/Archives/dossier.ico" 
 
 [Registry]
-Root: HKLM; Subkey: "Software\LachanceC"; Flags: uninsdeletekey
-Root: HKLM; Subkey: "Software\LachanceC"; ValueType: string; ValueName: "Langue"; ValueData: "{language}"
-Root: HKLM; Subkey: "Software\LachanceC"; ValueType: dword; ValueName: "Numéro"; ValueData: "1"
+Root: HKCU; Subkey: "Software\LachanceC"; Flags: uninsdeletekey
+Root: HKCU; Subkey: "Software\LachanceC"; ValueType: string; ValueName: "Langue"; ValueData: "{language}"
+Root: HKCU; Subkey: "Software\LachanceC"; ValueType: dword; ValueName: "Numéro"; ValueData: "1"
 
 [Run]
 Filename: "{app}\Readme file\Readme.txt"; Description: "See README file"; Flags: postinstall shellexec skipifsilent waituntilterminated ; Languages: english ; Components: readme
