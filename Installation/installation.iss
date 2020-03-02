@@ -40,6 +40,7 @@ Name: "french"; MessagesFile: "compiler:Languages\French.isl" ; LicenseFile: "C:
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: checked
 
 [Files]
+; Main application files
 Source: "C:\Lachance-C\Application\PUTTY.EXE"; DestDir: "{app}"; Flags: ignoreversion ; Components: lachancec
 Source: "C:\Lachance-C\Application\PAGEANT.EXE"; DestDir: "{app}"; Flags: ignoreversion ; Components: lachancec
 Source: "C:\Lachance-C\Application\PLINK.EXE"; DestDir: "{app}"; Flags: ignoreversion ; Components: lachancec
@@ -48,16 +49,31 @@ Source: "C:\Lachance-C\Application\PSFTP.EXE"; DestDir: "{app}"; Flags: ignoreve
 Source: "C:\Lachance-C\Application\PUTTY.CHM"; DestDir: "{app}"; Flags: ignoreversion ; Components: lachancec
 Source: "C:\Lachance-C\Application\PUTTY.ico"; DestDir: "{app}"; Flags: ignoreversion ; Components: lachancec
 Source: "C:\Lachance-C\Application\PUTTYGEN.EXE"; DestDir: "{app}"; Flags: ignoreversion ; Components: lachancec
+; User manual
 Source: "C:\Lachance-C\Application\Guides\User guide.pdf"; DestDir: "{app}/User's guide"; Flags: ignoreversion ; Components: user
+Source: "C:\Lachance-C\Application\Guides\pdf.ico"; DestDir: "{app}/User's guide"; Flags: ignoreversion ; Components: user
 Source: "C:\Lachance-C\Application\Guides\Guide usager.pdf"; DestDir: "{app}/Guide de l'usager"; Flags: ignoreversion ; Components: usager
+Source: "C:\Lachance-C\Application\Guides\pdf.ico"; DestDir: "{app}/Guide de l'usager"; Flags: ignoreversion ; Components: usager
+; Readme file
 Source: "C:\Lachance-C\Application\Readmes\Readme.txt"; DestDir: "{app}/Readme file"; Flags: ignoreversion ; Components: readme
+Source: "C:\Lachance-C\Application\Readmes\readme.ico"; DestDir: "{app}/Readme file"; Flags: ignoreversion ; Components: readme
 Source: "C:\Lachance-C\Application\Readmes\Lisez-moi.txt"; DestDir: "{app}/Fichier Lisez-moi"; Flags: ignoreversion ; Components: lisezmoi
+Source: "C:\Lachance-C\Application\Readmes\readme.ico"; DestDir: "{app}/Fichier Lisez-moi"; Flags: ignoreversion ; Components: lisezmoi
+; Archives
+Source: "C:\Lachance-C\Archives\*"; DestDir: "{app}/Archives"; Flags: ignoreversion recursesubdirs ; Components: lachancec
+
+
 
 [Icons]
 Name: "{group}\LachanceC"; Filename: "{app}\PUTTY.EXE" ; IconFilename: "{app}\PUTTY.ico"
+Name: "{group}\User Guide"; Filename: "{app}/User's guide/User guide.pdf" ; IconFilename: "{app}/User's guide/pdf.ico" ; Languages: english; Components: user
+Name: "{group}\Guide Usager"; Filename: "{app}/Guide de l'usager/Guide usager.pdf" ; IconFilename: "{app}/Guide de l'usager/pdf.ico" ; Languages: french; Components: usager
+Name: "{group}\Readme"; Filename: "{app}/Readme file/Readme.txt" ; IconFilename: "{app}/Readme file/readme.ico" ; Languages: english; Components: readme
+Name: "{group}\Lisez-moi"; Filename: "{app}/Fichier Lisez-moi/Lisez-moi.txt" ; IconFilename: "{app}/Readme file/readme.ico" ; Languages: french; Components: lisezmoi
 Name: "{group}\{cm:ProgramOnTheWeb,LachanceC}"; Filename: "http://www.lachancecsoft.com/" ; IconFilename: "C:\Lachance-C\Installation\www.ico"
 Name: "{group}\{cm:UninstallProgram,LachanceC}"; Filename: "{uninstallexe}" ; IconFilename: "C:\Lachance-C\Installation\uninstall.ico"
 Name: "{autodesktop}\LachanceC"; Filename: "{app}\PUTTY.EXE"; Tasks: desktopicon ; IconFilename: "{app}\PUTTY.ico"
+Name: "{group}\TP1"; Filename: "{app}/Archives/TP1/" ; IconFilename: "{app}/Archives/dossier.ico" 
 
 [Registry]
 Root: HKLM; Subkey: "Software\LachanceC"; Flags: uninsdeletekey
